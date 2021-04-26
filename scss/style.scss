@@ -1,6 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+$color-bg: #F2F2F2;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+@mixin number-before-step () {
+    content: '1';
+    color: white;
+    background-color: $color-primary;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    margin-left: -10px;
+    margin-right: 0px;
+    height: 20px;
+}
+
+@mixin icon-before-title () {
+    font-family: "Font Awesome 5 Free";
+    content:'\f3cd';
+    color: $color-primary;
+    margin: auto 20px
+}
+
 * {
     font-family: 'Roboto';
 }
@@ -8,7 +32,6 @@
 div{
     border: 1px solid black;
     width: 100%;
-    text-align: center;
 }
 
 .container{
@@ -16,8 +39,83 @@ div{
     margin: auto;
 }
 
-header img{
-    display: block;
-    width: 70%;
-    margin: 15px auto;
+.logo{
+    font-family: 'Shrikhand', cursive;
+
 }
+
+header {
+    & h1{
+        text-align: center;
+    }
+    & img{
+        display: block;
+        width: 70%;
+        margin: 15px auto;
+    }
+}
+
+.location{
+    text-align: center;
+    background-color: darken($color-bg, 10%);
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: $color-bg;
+    padding-bottom: 20px;
+    & .btn-explore{
+        width:55%;
+        align-self: center;
+        margin:20px;
+        background-color: $color-primary;
+        border-radius: 25px;
+        & p{
+            margin:10px;
+        }
+        &:hover{
+            background-color: lighten($color: $color-primary, $amount: 10%);
+        }
+    }
+    
+}
+
+
+.operation{
+
+    & .step{
+        display: flex;
+        margin: auto;
+        width: 90%;
+        background-color: $color-bg;
+        border-radius: 20px;
+        margin: 20px;
+        &.step-1{
+            &::before{
+                @include number-before-step()
+            }
+            & h3::before{
+                @include icon-before-title()
+            }
+        }
+        &.step-2{
+            &::before{
+                @include number-before-step()
+            }
+            & h3::before{
+                @include icon-before-title()
+            }
+        }
+        &.step-3{
+            &::before{
+                @include number-before-step()
+            }
+            & h3::before{
+                @include icon-before-title()
+            }
+        }
+    }
+}
+

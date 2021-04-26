@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 * {
@@ -7,7 +8,6 @@
 div {
   border: 1px solid black;
   width: 100%;
-  text-align: center;
 }
 
 .container {
@@ -15,10 +15,103 @@ div {
   margin: auto;
 }
 
+.logo {
+  font-family: "Shrikhand", cursive;
+}
+
+header h1 {
+  text-align: center;
+}
 header img {
   display: block;
   width: 70%;
   margin: 15px auto;
+}
+
+.location {
+  text-align: center;
+  background-color: #d9d9d9;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #F2F2F2;
+  padding-bottom: 20px;
+}
+.search .btn-explore {
+  width: 55%;
+  align-self: center;
+  margin: 20px;
+  background-color: #9356DC;
+  border-radius: 25px;
+}
+.search .btn-explore p {
+  margin: 10px;
+}
+.search .btn-explore:hover {
+  background-color: #ae80e5;
+}
+
+.operation .step {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  margin: 20px;
+}
+.operation .step.step-1::before {
+  content: "1";
+  color: white;
+  background-color: #9356DC;
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  margin-left: -10px;
+  margin-right: 0px;
+  height: 20px;
+}
+.operation .step.step-1 h3::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: #9356DC;
+  margin: auto 20px;
+}
+.operation .step.step-2::before {
+  content: "1";
+  color: white;
+  background-color: #9356DC;
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  margin-left: -10px;
+  margin-right: 0px;
+  height: 20px;
+}
+.operation .step.step-2 h3::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: #9356DC;
+  margin: auto 20px;
+}
+.operation .step.step-3::before {
+  content: "1";
+  color: white;
+  background-color: #9356DC;
+  border-radius: 5px;
+  padding: 5px;
+  margin: auto;
+  margin-left: -10px;
+  margin-right: 0px;
+  height: 20px;
+}
+.operation .step.step-3 h3::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: #9356DC;
+  margin: auto 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
