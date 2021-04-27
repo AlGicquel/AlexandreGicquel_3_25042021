@@ -1,13 +1,12 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 * {
   font-family: "Roboto";
 }
 
-div {
-  border: 1px solid black;
-  width: 100%;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .container {
@@ -17,20 +16,18 @@ div {
 
 .logo {
   font-family: "Shrikhand", cursive;
+  font-weight: normal;
 }
 
 header h1 {
   text-align: center;
 }
-header img {
-  display: block;
-  width: 70%;
-  margin: 15px auto;
-}
 
 .location {
   text-align: center;
   background-color: #d9d9d9;
+  margin: 0;
+  padding: 1px 0;
 }
 
 .search {
@@ -38,22 +35,33 @@ header img {
   flex-direction: column;
   text-align: center;
   background-color: #F2F2F2;
-  padding-bottom: 20px;
+  padding: 30px 15px;
+  width: calc(100% - 30px);
+}
+.search h2 {
+  font-size: larger;
+  width: 60%;
+  align-self: center;
 }
 .search .btn-explore {
-  width: 55%;
   align-self: center;
   margin: 20px;
-  background-color: #9356DC;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 25px;
+  transition: 0.3;
 }
-.search .btn-explore p {
+.search .btn-explore a p {
   margin: 10px;
+  color: white;
 }
 .search .btn-explore:hover {
-  background-color: #ae80e5;
+  background: linear-gradient(to bottom right, #ff93e1, #a16be0);
 }
 
+.operation {
+  padding: 30px 15px;
+  width: calc(100% - 30px);
+}
 .operation .step {
   display: flex;
   margin: auto;
@@ -61,57 +69,125 @@ header img {
   background-color: #F2F2F2;
   border-radius: 20px;
   margin: 20px;
+  transition: 0.3;
+  box-shadow: 5px 5px 10px #d9d9d9;
+}
+.operation .step:hover {
+  background-color: #f2eafb;
+}
+.operation .step:hover + .fas {
+  color: #9356DC;
+}
+.operation .step.step-1 .fas {
+  color: #a6a6a6;
+  width: 20px;
+  margin: auto 20px;
 }
 .operation .step.step-1::before {
   content: "1";
   color: white;
+  font-size: smaller;
   background-color: #9356DC;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 20px;
   margin: auto;
   margin-left: -10px;
   margin-right: 0px;
-  height: 20px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
 }
-.operation .step.step-1 h3::before {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  color: #9356DC;
+.operation .step.step-2 .fas {
+  color: #a6a6a6;
+  width: 20px;
   margin: auto 20px;
 }
 .operation .step.step-2::before {
-  content: "1";
+  content: "2";
   color: white;
+  font-size: smaller;
   background-color: #9356DC;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 20px;
   margin: auto;
   margin-left: -10px;
   margin-right: 0px;
-  height: 20px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
 }
-.operation .step.step-2 h3::before {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  color: #9356DC;
+.operation .step.step-3 .fas {
+  color: #a6a6a6;
+  width: 20px;
   margin: auto 20px;
 }
 .operation .step.step-3::before {
-  content: "1";
+  content: "3";
   color: white;
+  font-size: smaller;
   background-color: #9356DC;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 20px;
   margin: auto;
   margin-left: -10px;
   margin-right: 0px;
-  height: 20px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
 }
-.operation .step.step-3 h3::before {
-  font-family: "Font Awesome 5 Free";
-  content: "";
+
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F2F2;
+  padding: 30px 15px;
+  width: calc(100% - 30px);
+}
+.restaurants .restaurant a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 20px;
+  margin: 10px 0;
+  box-shadow: 5px 5px 10px #d9d9d9;
+}
+.restaurants .restaurant a:hover .resto-desc {
   color: #9356DC;
-  margin: auto 20px;
+}
+.restaurants .restaurant a img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.restaurants .restaurant a .resto-desc {
+  background-color: white;
+  padding-left: 20px;
+  width: calc(100% - 20px);
+  border-radius: 0 0 20px 20px;
+  height: 100%;
+}
+.restaurants .restaurant a .resto-desc h3, .restaurants .restaurant a .resto-desc p {
+  margin: 5px 0;
+}
+.restaurants .restaurant a .new {
+  position: absolute;
+  background-color: #99E2D0;
+  color: #32b091;
+  padding: 5px 10px;
+  top: 20px;
+  right: 20px;
+}
+
+footer {
+  background-color: #404040;
+  color: white;
+  padding: 20px;
+}
+footer h2 {
+  font-size: medium;
+  margin: 0;
+}
+footer a {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

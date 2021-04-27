@@ -5,24 +5,55 @@ $color-bg: #F2F2F2;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-prim-sec-gradient: linear-gradient(to bottom right, $color-secondary, $color-primary);
 
-@mixin number-before-step () {
-    content: '1';
+@mixin number-before-step ($number) {
+    content: $number;
     color: white;
+    font-size: smaller;
     background-color: $color-primary;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 20px;
     margin: auto;
     margin-left: -10px;
     margin-right: 0px;
-    height: 20px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
 }
 
-@mixin icon-before-title () {
+@mixin operation-display ($number) {
+    & .fas {
+        color: darken($color: $color-bg, $amount: 30%);
+        width: 20px;
+        margin: auto 20px;
+    }
+    &::before{
+        @include number-before-step($number)
+    }
+}
+
+@mixin icon-before-title ($icon-content) {
     font-family: "Font Awesome 5 Free";
-    content:'\f3cd';
-    color: $color-primary;
-    margin: auto 20px
+    content:$icon-content;
+    color: darken($color: $color-bg, $amount: 30%);
+    width: 20px;
+    margin: auto 20px;
+    &:hover{
+        color: $color-primary;
+    }
+}
+
+@mixin padding-section {
+    padding: 30px 15px;
+    width: calc(100% - 30px);
+}
+
+@mixin transition () {
+    transition: 0.3;
+}
+
+@mixin shadow () {
+    box-shadow: 5px 5px 10px darken($color-bg,10);
 }
 
 * {
@@ -30,8 +61,12 @@ $color-tertiary: #99E2D0;
 }
 
 div{
-    border: 1px solid black;
-    width: 100%;
+    // border: 1px solid black;
+}
+
+a{
+    text-decoration: none;
+    color:black;
 }
 
 .container{
@@ -41,23 +76,23 @@ div{
 
 .logo{
     font-family: 'Shrikhand', cursive;
+    font-weight: normal;
 
 }
 
 header {
+    // box-shadow: 0 0 5px darken($color: $color-bg, $amount: 30);
     & h1{
         text-align: center;
     }
-    & img{
-        display: block;
-        width: 70%;
-        margin: 15px auto;
-    }
+    
 }
 
 .location{
     text-align: center;
     background-color: darken($color-bg, 10%);
+    margin:0;
+    padding: 1px 0;
 }
 
 .search{
@@ -65,18 +100,26 @@ header {
     flex-direction: column;
     text-align: center;
     background-color: $color-bg;
-    padding-bottom: 20px;
-    & .btn-explore{
-        width:55%;
+    @include padding-section();
+    & h2{
+        font-size: larger;
+        width: 60%;
+        align-self: center;
+    }
+    & .btn-explore {
         align-self: center;
         margin:20px;
-        background-color: $color-primary;
+        background: $color-prim-sec-gradient;
         border-radius: 25px;
-        & p{
+        @include transition();
+        & a p{
             margin:10px;
+            color: white;
+            // font-weight: bold;
+            
         }
         &:hover{
-            background-color: lighten($color: $color-primary, $amount: 10%);
+            background: linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));;
         }
     }
     
@@ -84,7 +127,7 @@ header {
 
 
 .operation{
-
+    @include padding-section();
     & .step{
         display: flex;
         margin: auto;
@@ -92,30 +135,83 @@ header {
         background-color: $color-bg;
         border-radius: 20px;
         margin: 20px;
+        @include transition();
+        @include shadow();
+        &:hover{
+            background-color: lighten($color-primary, 35%);
+            & + .fas{
+                color: $color-primary;
+            }
+        }
         &.step-1{
-            &::before{
-                @include number-before-step()
-            }
-            & h3::before{
-                @include icon-before-title()
-            }
+            @include operation-display('1');
         }
         &.step-2{
-            &::before{
-                @include number-before-step()
-            }
-            & h3::before{
-                @include icon-before-title()
-            }
+            @include operation-display('2');
         }
         &.step-3{
-            &::before{
-                @include number-before-step()
-            }
-            & h3::before{
-                @include icon-before-title()
-            }
+            @include operation-display('3');
         }
     }
 }
 
+.restaurants{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg;
+    @include padding-section();
+    & .restaurant a {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 20px;
+        margin: 10px 0;
+        @include shadow();
+
+        &:hover  .resto-desc {
+            color: $color-primary;
+        }
+
+        & img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+        & .resto-desc{
+            // display: flex;
+            background-color: white;
+            padding-left: 20px;
+            width: calc(100% - 20px);
+            border-radius: 0 0 20px 20px;
+            height: 100%;
+            & h3,  p{
+                margin:5px 0;
+            }
+        }
+
+        & .new {
+            position: absolute;
+            background-color: $color-tertiary;
+            color: darken($color: $color-tertiary, $amount: 30);
+            padding: 5px 10px;
+            top: 20px;
+            right: 20px;
+        }
+    }
+}
+
+footer{
+    background-color: lighten($color: #000000, $amount: 25%);
+    color: white;
+    padding: 20px;
+    & h2{
+        font-size: medium;
+        margin: 0;
+    }
+    & a{
+        color:white;
+    }
+}
