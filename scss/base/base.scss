@@ -2,9 +2,13 @@
     font-family: 'Roboto';
 }
 
-div{
-    // border: 1px solid black;
+body{
+    margin:0;
 }
+
+// div{
+//     border: 1px solid black;
+// }
 
 a{
     text-decoration: none;
@@ -12,7 +16,7 @@ a{
 }
 
 .container{
-    width: 375px;
+    width: 100%;
     margin: auto;
 }
 

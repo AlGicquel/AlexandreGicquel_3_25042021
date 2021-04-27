@@ -1,0 +1,25 @@
+.btn-primary {
+    align-self: center;
+    justify-content: center;
+    width: 50%;
+    margin: 40px auto 10px auto;
+    background: $color-prim-sec-gradient;
+    border-radius: $border-radius;
+    @include transition();
+    @include shadow();
+    & a {
+        // display: block;
+            height: 100%;
+        & p{
+            text-align: center;
+            margin:0;
+            padding:12px 15px;
+            color: white;
+            // font-weight: bold;
+        }
+        
+    }
+    &:hover{
+        background: linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));;
+    }
+}

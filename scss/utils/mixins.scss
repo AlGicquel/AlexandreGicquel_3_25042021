@@ -3,7 +3,7 @@
     color: white;
     font-size: smaller;
     background-color: $color-primary;
-    border-radius: 20px;
+    border-radius: $border-radius;
     margin: auto;
     margin-left: -10px;
     margin-right: 0px;
@@ -34,36 +34,13 @@
     }
 }
 
-@mixin btn-primary () {
-    align-self: center;
-        margin:20px;
-        background: $color-prim-sec-gradient;
-        border-radius: 25px;
-        @include transition();
-        @include shadow();
-        & a {
-            // display: block;
-            height: 100%;
-            & p{
-                margin:0;
-                padding:10px;
-                color: white;
-                // font-weight: bold;
-            }
-            
-        }
-        &:hover{
-            background: linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));;
-        }
-}
-
 @mixin padding-section () {
     padding: 30px 15px;
     width: calc(100% - 30px);
 }
 
 @mixin transition () {
-    transition: 0.3;
+    transition: 0.3s;
 }
 
 @mixin shadow () {
