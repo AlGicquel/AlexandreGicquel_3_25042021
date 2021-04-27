@@ -1,0 +1,47 @@
+.restaurants{
+    display: flex;
+    flex-direction: column;
+    background-color: $color-bg;
+    @include padding-section();
+    & .restaurant a {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 20px;
+        margin: 10px 0;
+        @include shadow();
+
+        &:hover  .resto-desc {
+            color: $color-primary;
+        }
+
+        & img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+        & .resto-desc{
+            // display: flex;
+            background-color: white;
+            padding-left: 20px;
+            width: calc(100% - 20px);
+            border-radius: 0 0 20px 20px;
+            height: 100%;
+            & h3,  p{
+                margin:5px 0;
+            }
+        }
+
+        & .new {
+            position: absolute;
+            background-color: $color-tertiary;
+            color: darken($color: $color-tertiary, $amount: 30);
+            padding: 5px 10px;
+            top: 20px;
+            right: 20px;
+        }
+    }
+}

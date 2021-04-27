@@ -1,0 +1,28 @@
+.operation{
+    @include padding-section();
+    & .step{
+        display: flex;
+        margin: auto;
+        width: 90%;
+        background-color: $color-bg;
+        border-radius: 20px;
+        margin: 20px;
+        @include transition();
+        @include shadow();
+        &:hover{
+            background-color: lighten($color-primary, 35%);
+            & + .fas{
+                color: $color-primary;
+            }
+        }
+        &.step-1{
+            @include operation-display('1');
+        }
+        &.step-2{
+            @include operation-display('2');
+        }
+        &.step-3{
+            @include operation-display('3');
+        }
+    }
+}

@@ -12,6 +12,17 @@
     height: 16px;
 }
 
+@mixin operation-display ($number) {
+    & .fas {
+        color: darken($color: $color-bg, $amount: 30%);
+        width: 20px;
+        margin: auto 20px;
+    }
+    &::before{
+        @include number-before-step($number)
+    }
+}
+
 @mixin icon-before-title ($icon-content) {
     font-family: "Font Awesome 5 Free";
     content:$icon-content;
@@ -23,10 +34,37 @@
     }
 }
 
+@mixin btn-primary () {
+    align-self: center;
+        margin:20px;
+        background: $color-prim-sec-gradient;
+        border-radius: 25px;
+        @include transition();
+        & a {
+            // display: block;
+            height: 100%;
+            & p{
+                margin:0;
+                padding:10px;
+                color: white;
+                // font-weight: bold;
+            }
+            
+        }
+        &:hover{
+            background: linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));;
+        }
+}
+
+@mixin padding-section () {
+    padding: 30px 15px;
+    width: calc(100% - 30px);
+}
+
 @mixin transition () {
-    transition: 0.3 ease-in-out;
+    transition: 0.3;
 }
 
 @mixin shadow () {
-    box-shadow: 0 0 10px $color-bg;
+    box-shadow: 5px 5px 10px darken($color-bg,10);
 }

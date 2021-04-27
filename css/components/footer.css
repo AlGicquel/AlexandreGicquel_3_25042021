@@ -1,0 +1,20 @@
+footer {
+  background-color: #404040;
+  color: white;
+  padding: 20px;
+}
+footer h2 {
+  font-size: medium;
+  margin: 0;
+}
+footer p .fas {
+  margin-right: 5px;
+}
+footer a {
+  color: white;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=footer.css.map */

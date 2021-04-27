@@ -1,0 +1,20 @@
+* {
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 375px;
+  margin: auto;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=base.css.map */
