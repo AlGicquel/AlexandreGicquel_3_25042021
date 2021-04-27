@@ -11,8 +11,11 @@
         margin: 10px 0;
         @include shadow();
 
-        &:hover  .resto-desc {
-            color: $color-primary;
+        &:hover .resto-desc {
+            &::after{
+                color: linear-gradient(to top right, $color-secondary, $color-primary);;
+                font-weight: 900;
+            }
         }
 
         & img {
@@ -32,6 +35,13 @@
             height: 100%;
             & h3,  p{
                 margin:5px 0;
+            }
+
+            &::after{
+                font-family: 'Font Awesome 5 Free';
+                content: '\f004';
+                display:block;
+                align-self: flex-end;
             }
         }
 

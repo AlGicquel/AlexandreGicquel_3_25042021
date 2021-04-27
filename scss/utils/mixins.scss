@@ -40,6 +40,7 @@
         background: $color-prim-sec-gradient;
         border-radius: 25px;
         @include transition();
+        @include shadow();
         & a {
             // display: block;
             height: 100%;
