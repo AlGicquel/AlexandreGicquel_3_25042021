@@ -24,6 +24,14 @@ a {
   font-weight: normal;
 }
 
+header {
+  position: relative;
+}
+header a {
+  position: absolute;
+  left: 30px;
+  top: 15px;
+}
 header h1 {
   text-align: center;
 }
@@ -50,7 +58,7 @@ footer a:hover {
 .btn-primary {
   align-self: center;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   margin: 40px auto 10px auto;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 20px;
@@ -58,13 +66,17 @@ footer a:hover {
   box-shadow: 5px 5px 10px #d9d9d9;
 }
 .btn-primary a {
+  display: block;
   height: 100%;
+  border-radius: 20px;
 }
 .btn-primary a p {
+  display: block;
   text-align: center;
   margin: 0;
-  padding: 12px 15px;
+  padding: 10px 5px;
   color: white;
+  border-radius: 20px;
 }
 .btn-primary:hover {
   background: linear-gradient(to bottom right, #ff93e1, #a16be0);
@@ -236,10 +248,21 @@ footer a:hover {
   padding: 30px 15px;
   width: calc(100% - 30px);
   background-color: #F2F2F2;
+  margin-top: -60px;
+  position: relative;
+  z-index: 1;
   border-radius: 50px 50px 0 0;
 }
 .menu .title {
   display: flex;
+  justify-content: space-between;
+}
+.menu .title .fa-heart {
+  align-self: center;
+  margin-right: 20px;
+}
+.menu .title .fa-heart:hover {
+  font-weight: 900;
 }
 .menu .menu-category h3 {
   width: 40px;
@@ -256,6 +279,7 @@ footer a:hover {
   padding-left: 20px;
   display: flex;
   margin: 10px 0;
+  transition: 0.3s;
 }
 .menu .menu-category .card .card-text {
   flex: 1;
@@ -274,6 +298,9 @@ footer a:hover {
   color: white;
   border-radius: 0 20px 20px 0;
   justify-content: center;
+}
+.menu .menu-category .card:hover {
+  background-color: #e8f9f5;
 }
 
 /*# sourceMappingURL=style.css.map */
