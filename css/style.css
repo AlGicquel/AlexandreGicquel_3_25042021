@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 * {
@@ -201,10 +200,6 @@ footer a:hover {
   margin: 20px 0;
   box-shadow: 5px 5px 10px #d9d9d9;
 }
-.restaurants .restaurant a:hover .resto-desc::after {
-  color: linear-gradient(to top right, #FF79DA, #9356DC);
-  font-weight: 900;
-}
 .restaurants .restaurant a img {
   display: block;
   width: 100%;
@@ -213,20 +208,28 @@ footer a:hover {
   border-radius: 20px 20px 0 0;
 }
 .restaurants .restaurant a .resto-desc {
+  display: flex;
   background-color: white;
   padding-left: 20px;
   width: calc(100% - 20px);
   border-radius: 0 0 20px 20px;
   height: 100%;
 }
-.restaurants .restaurant a .resto-desc h3, .restaurants .restaurant a .resto-desc p {
-  margin: 5px 0;
+.restaurants .restaurant a .resto-desc .desc-text {
+  flex: 1;
 }
-.restaurants .restaurant a .resto-desc::after {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  display: block;
-  align-self: flex-end;
+.restaurants .restaurant a .resto-desc h3, .restaurants .restaurant a .resto-desc p {
+  margin: 5px 0 2.5px 0;
+}
+.restaurants .restaurant a .resto-desc .fa-heart {
+  margin-right: 20px;
+  align-self: center;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+.restaurants .restaurant a .resto-desc .fa-heart:hover {
+  font-weight: 900;
 }
 .restaurants .restaurant a .new {
   position: absolute;
