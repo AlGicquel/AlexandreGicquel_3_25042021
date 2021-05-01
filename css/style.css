@@ -79,6 +79,20 @@ footer a:hover {
 }
 .btn-primary:hover {
   background: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  transform: scale(1.05);
+}
+
+.fa-heart {
+  margin-right: 15px;
+  padding: 5px;
+  align-self: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+}
+.fa-heart:hover {
+  font-weight: 900;
 }
 
 .location {
@@ -122,9 +136,13 @@ footer a:hover {
 }
 .operation ol li .step:hover {
   background-color: #f2eafb;
+  transform: scale(1.02);
 }
-.operation ol li .step:hover + .fas {
+.operation ol li .step:hover > i::before {
   color: #9356DC;
+}
+.operation ol li .step i {
+  transition: 0.3s;
 }
 .operation ol li .step.step-1 .fas {
   color: #a6a6a6;
@@ -192,6 +210,12 @@ footer a:hover {
   list-style-type: none;
   padding: 0;
 }
+.restaurants .restaurant {
+  transition: 0.3s;
+}
+.restaurants .restaurant:hover {
+  transform: scale(1.02);
+}
 .restaurants .restaurant a {
   display: flex;
   flex-direction: column;
@@ -200,14 +224,14 @@ footer a:hover {
   margin: 20px 0;
   box-shadow: 5px 5px 10px #d9d9d9;
 }
-.restaurants .restaurant a img {
+.restaurants .restaurant img {
   display: block;
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
 }
-.restaurants .restaurant a .resto-desc {
+.restaurants .restaurant .resto-desc {
   display: flex;
   background-color: white;
   padding-left: 20px;
@@ -215,23 +239,13 @@ footer a:hover {
   border-radius: 0 0 20px 20px;
   height: 100%;
 }
-.restaurants .restaurant a .resto-desc .desc-text {
+.restaurants .restaurant .resto-desc .desc-text {
   flex: 1;
 }
-.restaurants .restaurant a .resto-desc h3, .restaurants .restaurant a .resto-desc p {
+.restaurants .restaurant .resto-desc h3, .restaurants .restaurant .resto-desc p {
   margin: 5px 0 2.5px 0;
 }
-.restaurants .restaurant a .resto-desc .fa-heart {
-  margin-right: 20px;
-  align-self: center;
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-}
-.restaurants .restaurant a .resto-desc .fa-heart:hover {
-  font-weight: 900;
-}
-.restaurants .restaurant a .new {
+.restaurants .restaurant .new {
   position: absolute;
   background-color: #99E2D0;
   color: #32b091;
@@ -279,6 +293,7 @@ footer a:hover {
 .menu .menu-category .card {
   background-color: white;
   border-radius: 20px;
+  height: 70px;
   padding-left: 20px;
   display: flex;
   margin: 10px 0;
@@ -294,16 +309,39 @@ footer a:hover {
   align-self: flex-end;
   margin: 10px;
 }
-.menu .menu-category .card .fa-check-circle {
-  padding: 22px 15px;
+.menu .menu-category .card .icon-bg {
+  width: 60px;
+  height: 100%;
   background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: 0.3s;
+}
+.menu .menu-category .card .icon-bg span {
+  overflow: none;
+  height: 100%;
+}
+.menu .menu-category .card .icon-bg span .fa-check-circle {
+  transition: 0.3s;
+  margin: 21px 17px;
   font-size: 25px;
   color: white;
-  border-radius: 0 20px 20px 0;
   justify-content: center;
+  transform: translateX(200%) rotate(0);
 }
 .menu .menu-category .card:hover {
-  background-color: #e8f9f5;
+  transform: scale(1.02);
+}
+.menu .menu-category .card:hover .icon-bg {
+  transform: scaleX(1);
+  background-color: #99E2D0;
+}
+.menu .menu-category .card:hover .icon-bg span {
+  display: inline-block;
+}
+.menu .menu-category .card:hover .icon-bg span > .fa-check-circle {
+  transform: translateX(0%) rotate(-1turn);
 }
 
 /*# sourceMappingURL=style.css.map */

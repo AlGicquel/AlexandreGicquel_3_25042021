@@ -36,6 +36,7 @@
         & .card {
             background-color: white;
             border-radius: $border-radius;
+            height: 70px;
             padding-left: 20px;
             display: flex;
             margin: 10px 0;
@@ -50,24 +51,47 @@
                 align-self: flex-end;
                 margin: 10px;
             }
-            & .fa-check-circle{
-                // display: none;
-                padding: 22px 15px;
-                background-color: $color-tertiary;
-                font-size: 25px;
-                color: white;
-                border-radius: 0 $border-radius $border-radius 0;
-                justify-content: center;
-            }
-
-            &:hover{
-                background-color: lighten($color: $color-tertiary, $amount: 20);
-            }
-
-            // &:hover + .fa-check-circle{
-            //     display: unset;
-            // }
             
+            & .icon-bg {
+                width: 60px;
+                height: 100%;
+                background-color: $color-tertiary;
+                border-radius: 0 $border-radius $border-radius 0;
+                transform: scaleX(0);
+                transform-origin: 100% 50%;
+                @include transition();
+
+                & span {
+                    overflow: none;
+                    height: 100%;
+                    // transform: translateX(100%);
+
+                & .fa-check-circle{
+                    @include transition();
+                    margin: 21px 17px;
+                    font-size: 25px;
+                    color: white;
+                    justify-content: center;
+                    transform: translateX(200%) rotate(0);
+
+                }
+            }
+            }
+
+            &:hover {
+                transform: scale(1.02);
+                & .icon-bg{
+                    transform: scaleX(1);
+                    background-color: $color-tertiary;
+                    & span {
+                        display: inline-block;
+                        // transform: translateX(0%);
+                        & > .fa-check-circle{
+                            transform: translateX(0%) rotate(-1turn);
+                        }
+                    }
+                }
+            }
         }
     }
 }

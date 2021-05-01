@@ -7,14 +7,19 @@
         list-style-type: none;
         padding: 0;
     }
-    & .restaurant a {
+    & .restaurant{
+        @include transition();
+        &:hover{
+            transform: scale(1.02);
+        }
+        & a {
         display: flex;
         flex-direction: column;
         position: relative;
         border-radius: $border-radius;
         margin: 20px 0;
         @include shadow();
-
+        }
         & img {
             display: block;
             width: 100%;
@@ -36,16 +41,7 @@
             & h3,  p{
                 margin:5px 0 2.5px 0;
             }
-            & .fa-heart{
-                margin-right: 20px;
-                align-self: center;
-                color: transparent;
-                background-clip: text;
-                background-image:  $color-prim-sec-gradient;
-                &:hover{
-                    font-weight: 900;
-                }
-            }
+            
         }
 
         & .new {

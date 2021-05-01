@@ -25,5 +25,19 @@
     }
     &:hover{
         background: linear-gradient(to bottom right, lighten($color-secondary, 5%), lighten($color-primary, 5%));;
+        transform: scale(1.05);
+    }
+}
+
+.fa-heart{
+    margin-right: 15px;
+    padding: 5px;
+    align-self: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image:  $color-prim-sec-gradient;
+    &:hover{
+        font-weight: 900;
     }
 }
