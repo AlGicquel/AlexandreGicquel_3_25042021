@@ -17,7 +17,7 @@
         justify-content: space-between;
         & .fa-heart{
             align-self: center;
-            margin-right: 20px;
+            margin-right: 0px;
             &:hover{
                 font-weight: 900;
             }
@@ -40,52 +40,56 @@
             padding-left: 20px;
             display: flex;
             margin: 10px 0;
+            overflow: hidden;
             @include transition;
             & .card-text{
-                flex:1;
+                flex: 1 0 90%;
+                // @include transition();
+                transition: 0.5s;
                 & h4, p {
                     margin: 10px 0;
                 }
             }
             & .price{
+                flex: 0 0 10%;
                 align-self: flex-end;
-                margin: 10px;
+                // text-align: right;
+                margin-bottom: 10px;
+                @include transition();
             }
             
             & .icon-bg {
-                width: 60px;
-                height: 100%;
+                flex: 0 0 70px;
                 background-color: $color-tertiary;
                 border-radius: 0 $border-radius $border-radius 0;
-                transform: scaleX(0);
-                transform-origin: 100% 50%;
-                @include transition();
+                // @include transition();
+
 
                 & span {
                     overflow: none;
                     height: 100%;
-                    // transform: translateX(100%);
 
                 & .fa-check-circle{
-                    @include transition();
-                    margin: 21px 17px;
+                    transition: 0.5s;
+                    // @include transition();
+                    margin: 22.5px;
                     font-size: 25px;
                     color: white;
                     justify-content: center;
-                    transform: translateX(200%) rotate(0);
+                    transform: translateX(250%) rotate(0);
 
                 }
             }
             }
 
             &:hover {
-                transform: scale(1.02);
+                & .card-text{
+                    flex: 1 0 60%;
+                }
                 & .icon-bg{
-                    transform: scaleX(1);
                     background-color: $color-tertiary;
                     & span {
                         display: inline-block;
-                        // transform: translateX(0%);
                         & > .fa-check-circle{
                             transform: translateX(0%) rotate(-1turn);
                         }

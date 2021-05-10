@@ -86,10 +86,6 @@ footer a:hover {
   margin-right: 15px;
   padding: 5px;
   align-self: center;
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 .fa-heart:hover {
   font-weight: 900;
@@ -141,7 +137,7 @@ footer a:hover {
 .operation ol li .step:hover > i::before {
   color: #9356DC;
 }
-.operation ol li .step i {
+.operation ol li .step i::before {
   transition: 0.3s;
 }
 .operation ol li .step.step-1 .fas {
@@ -276,7 +272,7 @@ footer a:hover {
 }
 .menu .title .fa-heart {
   align-self: center;
-  margin-right: 20px;
+  margin-right: 0px;
 }
 .menu .title .fa-heart:hover {
   font-weight: 900;
@@ -297,44 +293,43 @@ footer a:hover {
   padding-left: 20px;
   display: flex;
   margin: 10px 0;
+  overflow: hidden;
   transition: 0.3s;
 }
 .menu .menu-category .card .card-text {
-  flex: 1;
+  flex: 1 0 90%;
+  transition: 0.5s;
 }
 .menu .menu-category .card .card-text h4, .menu .menu-category .card .card-text p {
   margin: 10px 0;
 }
 .menu .menu-category .card .price {
+  flex: 0 0 10%;
   align-self: flex-end;
-  margin: 10px;
+  margin-bottom: 10px;
+  transition: 0.3s;
 }
 .menu .menu-category .card .icon-bg {
-  width: 60px;
-  height: 100%;
+  flex: 0 0 70px;
   background-color: #99E2D0;
   border-radius: 0 20px 20px 0;
-  transform: scaleX(0);
-  transform-origin: 100% 50%;
-  transition: 0.3s;
 }
 .menu .menu-category .card .icon-bg span {
   overflow: none;
   height: 100%;
 }
 .menu .menu-category .card .icon-bg span .fa-check-circle {
-  transition: 0.3s;
-  margin: 21px 17px;
+  transition: 0.5s;
+  margin: 22.5px;
   font-size: 25px;
   color: white;
   justify-content: center;
-  transform: translateX(200%) rotate(0);
+  transform: translateX(250%) rotate(0);
 }
-.menu .menu-category .card:hover {
-  transform: scale(1.02);
+.menu .menu-category .card:hover .card-text {
+  flex: 1 0 60%;
 }
 .menu .menu-category .card:hover .icon-bg {
-  transform: scaleX(1);
   background-color: #99E2D0;
 }
 .menu .menu-category .card:hover .icon-bg span {
