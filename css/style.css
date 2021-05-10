@@ -82,13 +82,33 @@ footer a:hover {
   opacity: 0.8;
 }
 
-.fa-heart {
+.heart {
+  align-self: center;
+}
+.heart .fa-heart {
   margin-right: 15px;
   padding: 5px;
   align-self: center;
 }
-.fa-heart:hover {
+.heart .fa-heart.heart-full {
+  position: absolute;
+  right: 15px;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
   font-weight: 900;
+  transition: 0.3s;
+  transform: scale(0);
+}
+.heart .fa-heart.heart-empty {
+  transform: scale(1);
+}
+.heart:hover > .heart-empty {
+  transform: scale(0);
+}
+.heart:hover > .heart-full {
+  transform: scale(1);
 }
 
 .location {
@@ -270,11 +290,14 @@ footer a:hover {
   display: flex;
   justify-content: space-between;
 }
-.menu .title .fa-heart {
+.menu .title .heart {
+  align-self: center;
+}
+.menu .title .heart .fa-heart {
   align-self: center;
   margin-right: 0px;
 }
-.menu .title .fa-heart:hover {
+.menu .title .heart .fa-heart:hover {
   font-weight: 900;
 }
 .menu .menu-category h3 {

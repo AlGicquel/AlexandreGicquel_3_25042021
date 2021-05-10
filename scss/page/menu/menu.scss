@@ -17,11 +17,14 @@
     & .title {
         display: flex;
         justify-content: space-between;
-        & .fa-heart{
+        & .heart {
             align-self: center;
-            margin-right: 0px;
-            &:hover{
-                font-weight: 900;
+            & .fa-heart{
+                align-self: center;
+                margin-right: 0px;
+                &:hover{
+                    font-weight: 900;
+                }
             }
         }
     }
