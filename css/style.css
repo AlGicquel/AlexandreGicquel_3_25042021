@@ -84,6 +84,7 @@ footer a:hover {
 
 .heart {
   align-self: center;
+  position: relative;
 }
 .heart .fa-heart {
   margin-right: 15px;
@@ -92,7 +93,7 @@ footer a:hover {
 }
 .heart .fa-heart.heart-full {
   position: absolute;
-  right: 15px;
+  right: 0;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
