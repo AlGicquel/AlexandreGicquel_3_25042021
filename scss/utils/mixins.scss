@@ -19,7 +19,17 @@
         margin: auto 20px;
     }
     &::before{
-        @include number-before-step($number)
+        content: $number;
+        color: white;
+        font-size: smaller;
+        background-color: $color-primary;
+        border-radius: $border-radius;
+        margin: auto;
+        margin-left: -10px;
+        margin-right: 0px;
+        text-align: center;
+        width: 16px;
+        height: 16px;
     }
 }
 

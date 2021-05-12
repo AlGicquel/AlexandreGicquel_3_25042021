@@ -47,6 +47,7 @@
             display: flex;
             margin: 10px 0;
             overflow: hidden;
+            white-space: nowrap;
             @include transition;
             & .card-text{
                 flex: 1 0 90%;

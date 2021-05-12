@@ -16,6 +16,13 @@
                 margin: 20px;
                 @include transition();
                 @include shadow();
+                animation: slide-step 0.3s ease-out 1.5s 1 both;
+                &:nth-of-type(2){
+                    animation-delay: 1.8s;
+                }
+                &:nth-of-type(3){
+                    animation-delay: 2.1s;
+                }
 
                 &:hover{
                     background-color: lighten($color-primary, 35%);
@@ -32,9 +39,11 @@
                 }
                 &.step-2{
                     @include operation-display('2');
+                    animation-delay: 1.6s;
                 }
                 &.step-3{
                     @include operation-display('3');
+                    animation-delay: 1.7s;
                 }
             }
         }

@@ -21,11 +21,37 @@
   0% {
     transform: scale(0);
   }
-  75% {
-    transform: scale(1.5);
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes grow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slide-step {
+  from {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 * {
@@ -143,7 +169,7 @@ footer a:hover {
 }
 .heart:hover > .heart-full {
   transform: scale(1);
-  animation: heart-animation 1s both;
+  animation: heart-animation 0.7s both linear;
 }
 
 .location {
@@ -187,6 +213,13 @@ footer a:hover {
   margin: 20px;
   transition: 0.3s;
   box-shadow: 5px 5px 10px #d9d9d9;
+  animation: slide-step 0.3s ease-out 1.5s 1 both;
+}
+.operation ol li .step:nth-of-type(2) {
+  animation-delay: 1.8s;
+}
+.operation ol li .step:nth-of-type(3) {
+  animation-delay: 2.1s;
 }
 .operation ol li .step:hover {
   background-color: #f2eafb;
@@ -216,6 +249,9 @@ footer a:hover {
   width: 16px;
   height: 16px;
 }
+.operation ol li .step.step-2 {
+  animation-delay: 1.6s;
+}
 .operation ol li .step.step-2 .fas {
   color: #a6a6a6;
   width: 20px;
@@ -233,6 +269,9 @@ footer a:hover {
   text-align: center;
   width: 16px;
   height: 16px;
+}
+.operation ol li .step.step-3 {
+  animation-delay: 1.7s;
 }
 .operation ol li .step.step-3 .fas {
   color: #a6a6a6;
@@ -359,6 +398,7 @@ footer a:hover {
   display: flex;
   margin: 10px 0;
   overflow: hidden;
+  white-space: nowrap;
   transition: 0.3s;
 }
 .menu .menu-category .card .card-text {

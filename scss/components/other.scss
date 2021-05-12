@@ -5,6 +5,7 @@
     margin: 40px auto 10px auto;
     background: $color-prim-sec-gradient;
     border-radius: $border-radius;
+    // animation: grow 0.5s 1.5s both ;
     @include transition();
     @include shadow();
     & a {
@@ -64,7 +65,7 @@
         }
         & > .heart-full{
             transform: scale(1);
-            animation: heart-animation 1s both;
+            animation: heart-animation 0.7s both linear;
 
         }
     }
