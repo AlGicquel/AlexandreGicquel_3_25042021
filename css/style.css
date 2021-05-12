@@ -1,5 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes header-animation {
+  0% {
+    transform: translateY(700%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes display-delay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loading {}
+@keyframes heart-animation {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 * {
   font-family: "Roboto";
 }
@@ -16,6 +44,7 @@ a {
 .container {
   width: 100%;
   margin: auto;
+  overflow: hidden;
 }
 
 .logo {
@@ -34,11 +63,15 @@ header a {
 header h1 {
   text-align: center;
 }
+header.header-animation {
+  animation: header-animation 0.7s 1s both;
+}
 
 footer {
   background-color: #404040;
   color: white;
   padding: 20px;
+  animation: display-delay 0.3s 1.5s both;
 }
 footer h2 {
   font-size: medium;
@@ -103,13 +136,14 @@ footer a:hover {
   transform: scale(0);
 }
 .heart .fa-heart.heart-empty {
-  transform: scale(1);
+  transition: 0.3s;
 }
 .heart:hover > .heart-empty {
-  transform: scale(0);
+  opacity: 0;
 }
 .heart:hover > .heart-full {
   transform: scale(1);
+  animation: heart-animation 1s both;
 }
 
 .location {
@@ -117,6 +151,7 @@ footer a:hover {
   background-color: #d9d9d9;
   margin: 0;
   padding: 1px 0;
+  animation: display-delay 0.3s 1.5s both;
 }
 
 .search {
@@ -124,6 +159,7 @@ footer a:hover {
   flex-direction: column;
   text-align: center;
   background-color: #F2F2F2;
+  animation: display-delay 0.3s 1.5s both;
   padding: 30px 15px;
   width: calc(100% - 30px);
 }
@@ -136,6 +172,7 @@ footer a:hover {
 .operation {
   padding: 30px 15px;
   width: calc(100% - 30px);
+  animation: display-delay 0.3s 1.5s both;
 }
 .operation ol {
   padding: 0;
@@ -144,7 +181,7 @@ footer a:hover {
 .operation ol li .step {
   display: flex;
   margin: auto;
-  width: calc(95% - 20px);
+  width: calc(100% - 40px);
   background-color: #F2F2F2;
   border-radius: 20px;
   margin: 20px;
@@ -220,6 +257,7 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   background-color: #F2F2F2;
+  animation: display-delay 0.3s 1.5s both;
   padding: 30px 15px;
   width: calc(100% - 30px);
 }
@@ -301,6 +339,9 @@ footer a:hover {
 .menu .title .heart .fa-heart:hover {
   font-weight: 900;
 }
+.menu .menu-category {
+  margin-bottom: 30px;
+}
 .menu .menu-category h3 {
   width: 40px;
   padding-bottom: 5px;
@@ -323,9 +364,13 @@ footer a:hover {
 .menu .menu-category .card .card-text {
   flex: 1 0 90%;
   transition: 0.5s;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu .menu-category .card .card-text h4, .menu .menu-category .card .card-text p {
   margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu .menu-category .card .price {
   flex: 0 0 10%;
@@ -339,7 +384,6 @@ footer a:hover {
   border-radius: 0 20px 20px 0;
 }
 .menu .menu-category .card .icon-bg span {
-  overflow: none;
   height: 100%;
 }
 .menu .menu-category .card .icon-bg span .fa-check-circle {

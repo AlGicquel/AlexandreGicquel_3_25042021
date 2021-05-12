@@ -51,16 +51,21 @@
         }
         
         &.heart-empty{
-            transform: scale(1);
+            @include transition();
+            // transform: scale(1);
+            // opacity: 1;
             
         }
     }
     &:hover{
         & > .heart-empty {
-            transform: scale(0);
+            // transform: scale(0);
+            opacity: 0;
         }
         & > .heart-full{
             transform: scale(1);
+            animation: heart-animation 1s both;
+
         }
     }
 }

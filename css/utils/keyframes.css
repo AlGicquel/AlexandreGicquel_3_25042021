@@ -1,3 +1,30 @@
+@keyframes header-animation {
+  0% {
+    transform: translateY(700%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes display-delay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes loading {}
+@keyframes heart-animation {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 /*# sourceMappingURL=keyframes.css.map */

@@ -2,6 +2,7 @@ footer{
     background-color: lighten($color: #000000, $amount: 25%);
     color: white;
     padding: 20px;
+    @include display-delay;
     & h2{
         font-size: medium;
         margin: 0;

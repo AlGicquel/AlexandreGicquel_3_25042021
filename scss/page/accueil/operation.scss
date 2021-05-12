@@ -1,5 +1,7 @@
 .operation{
     @include padding-section();
+    @include display-delay;
+    
     & ol{
         padding: 0;
         list-style-type: none;
@@ -8,7 +10,7 @@
             & .step{
                 display: flex;
                 margin: auto;
-                width: calc(95% - 20px);
+                width: calc(100% - 40px);
                 background-color: $color-bg;
                 border-radius: $border-radius;
                 margin: 20px;

@@ -10,5 +10,10 @@ header {
     & h1{
         text-align: center;
     }
+
+    &.header-animation{
+        // transition: 2s;
+        animation: header-animation 0.7s 1s both;
+    }
     
 }
