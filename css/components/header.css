@@ -1,16 +1,17 @@
-header {
-  position: relative;
-}
-header a {
-  position: absolute;
-  left: 15px;
-  padding: 15px;
-}
-header h1 {
-  text-align: center;
-}
-header.header-animation {
-  animation: header-animation 0.7s 1s both;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 26 |                 background-color: $color-primary;
+ *    |                                   ^^^^^^^^^^^^^^
+ *    '
+ *   scss\components\header.scss 26:35  root stylesheet */
 
-/*# sourceMappingURL=header.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 26 \2502                  background-color: $color-primary;\d\a    \2502                                    ^^^^^^^^^^^^^^\a    \2575 \a   scss\\components\\header.scss 26:35  root stylesheet";
+}

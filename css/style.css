@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @keyframes header-animation {
   0% {
-    transform: translateY(700%);
+    transform: translateY(450%);
   }
   100% {
     transform: translateY(0%);
@@ -54,6 +54,18 @@
     transform: translateX(0);
   }
 }
+@keyframes loading-bar {
+  0% {
+    transform: scaleX(0);
+  }
+  75% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
   font-family: "Roboto";
 }
@@ -88,16 +100,29 @@ header a {
 }
 header h1 {
   text-align: center;
+  margin: 20px 0 15px 0;
 }
 header.header-animation {
-  animation: header-animation 0.7s 1s both;
+  animation: header-animation 0.7s 2s both;
+}
+header.header-animation .loader {
+  width: 80%;
+  height: 5px;
+  margin: auto;
+}
+header.header-animation .loader .loader-bar {
+  background-color: #9356DC;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0% 50%;
+  animation: loading-bar 1.5s 0.5s both;
 }
 
 footer {
   background-color: #404040;
   color: white;
   padding: 20px;
-  animation: display-delay 0.3s 1.5s both;
+  animation: display-delay 0.3s 2.5s both;
 }
 footer h2 {
   font-size: medium;
@@ -177,7 +202,7 @@ footer a:hover {
   background-color: #d9d9d9;
   margin: 0;
   padding: 1px 0;
-  animation: display-delay 0.3s 1.5s both;
+  animation: display-delay 0.3s 2.5s both;
 }
 
 .search {
@@ -185,7 +210,7 @@ footer a:hover {
   flex-direction: column;
   text-align: center;
   background-color: #F2F2F2;
-  animation: display-delay 0.3s 1.5s both;
+  animation: display-delay 0.3s 2.5s both;
   padding: 30px 15px;
   width: calc(100% - 30px);
 }
@@ -198,7 +223,7 @@ footer a:hover {
 .operation {
   padding: 30px 15px;
   width: calc(100% - 30px);
-  animation: display-delay 0.3s 1.5s both;
+  animation: display-delay 0.3s 2.5s both;
 }
 .operation ol {
   padding: 0;
@@ -213,13 +238,13 @@ footer a:hover {
   margin: 20px;
   transition: 0.3s;
   box-shadow: 5px 5px 10px #d9d9d9;
-  animation: slide-step 0.3s ease-out 1.5s 1 both;
+  animation: slide-step 0.3s ease-out 2.5s 1 both;
 }
 .operation ol li .step:nth-of-type(2) {
-  animation-delay: 1.8s;
+  animation-delay: 2.8s;
 }
 .operation ol li .step:nth-of-type(3) {
-  animation-delay: 2.1s;
+  animation-delay: 3.1s;
 }
 .operation ol li .step:hover {
   background-color: #f2eafb;
@@ -250,7 +275,7 @@ footer a:hover {
   height: 16px;
 }
 .operation ol li .step.step-2 {
-  animation-delay: 1.6s;
+  animation-delay: 2.6s;
 }
 .operation ol li .step.step-2 .fas {
   color: #a6a6a6;
@@ -271,7 +296,7 @@ footer a:hover {
   height: 16px;
 }
 .operation ol li .step.step-3 {
-  animation-delay: 1.7s;
+  animation-delay: 2.7s;
 }
 .operation ol li .step.step-3 .fas {
   color: #a6a6a6;
@@ -296,7 +321,7 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   background-color: #F2F2F2;
-  animation: display-delay 0.3s 1.5s both;
+  animation: display-delay 0.3s 2.5s both;
   padding: 30px 15px;
   width: calc(100% - 30px);
 }
