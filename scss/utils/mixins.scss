@@ -82,3 +82,8 @@
         }
     }
 }
+
+@mixin responsive {
+    width: $breakpoint;
+    margin: auto;
+}

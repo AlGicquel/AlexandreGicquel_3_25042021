@@ -1,0 +1,59 @@
+@media all and (min-width: $breakpoint){
+    // .container{
+    //     width: $breakpoint;
+    // }
+
+    .operation{
+        @include responsive();
+    }
+
+    .restaurants{
+        // flex-direction: row;
+        
+        & h2{
+            @include responsive();
+            align-self: flex-start;
+
+
+        }
+
+        & ul {
+            display: flex;
+            flex-direction: row;
+            @include responsive();
+            justify-content: space-between;
+            height: 600px;
+            flex-wrap: wrap;
+        }
+
+        & .restaurant{
+            @include responsive();
+
+            width: 380px;
+        }
+    }
+
+    .menu > *{
+        @include responsive();
+
+    }
+
+    header{
+        @include responsive();
+
+    }
+    
+    // footer {
+    //     & h2, p {
+    //         width: $breakpoint;
+    //         margin: 16px auto;
+
+    //     }
+    // }
+
+    footer > * {
+        width: $breakpoint;
+        margin: 16px auto;
+    }
+    
+}

@@ -38,18 +38,19 @@
         & ul{
             list-style-type: none;
             padding: 0;
+            // counter-reset: meal-counter 0.3s;
             & li{
-            &:nth-child(1) {
-                animation: fadeInY 0.5s ease-out 0.3s both;
+                &:nth-child(1) {
+                    animation: fadeInY 0.5s ease-out 0.3s both;
+                }
+                &:nth-child(2) {
+                    animation: fadeInY 0.5s ease-out 0.5s both;
+                }
+                &:nth-child(3) {
+                    animation: fadeInY 0.5s ease-out 0.7s both;
+                    
+                }
             }
-            &:nth-child(2) {
-                animation: fadeInY 0.5s ease-out 0.5s both;
-            }
-            &:nth-child(3) {
-                animation: fadeInY 0.5s ease-out 0.7s both;
-                
-            }
-        }
         }
         & .card {
             background-color: white;
@@ -62,7 +63,7 @@
             white-space: nowrap;
             @include transition;
             & .card-text{
-                flex: 1 0 90%;
+                flex: 1 0 calc(100% - 50px);
                 // @include transition();
                 transition: 0.5s;
                 overflow: hidden;
@@ -74,7 +75,7 @@
                 }
             }
             & .price{
-                flex: 0 0 10%;
+                flex: 0 0 50px;
                 align-self: flex-end;
                 // text-align: right;
                 margin-bottom: 10px;
@@ -107,7 +108,7 @@
 
             &:hover {
                 & .card-text{
-                    flex: 1 0 60%;
+                    flex: 1 0 calc(90% - 120px);
                 }
                 & .icon-bg{
                     background-color: $color-tertiary;

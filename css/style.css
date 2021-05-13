@@ -100,6 +100,47 @@ a {
   font-weight: normal;
 }
 
+@media all and (min-width: 800px) {
+  .operation {
+    width: 800px;
+    margin: auto;
+  }
+
+  .restaurants h2 {
+    width: 800px;
+    margin: auto;
+    align-self: flex-start;
+  }
+  .restaurants ul {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    margin: auto;
+    justify-content: space-between;
+    height: 600px;
+    flex-wrap: wrap;
+  }
+  .restaurants .restaurant {
+    width: 800px;
+    margin: auto;
+    width: 380px;
+  }
+
+  .menu > * {
+    width: 800px;
+    margin: auto;
+  }
+
+  header {
+    width: 800px;
+    margin: auto;
+  }
+
+  footer > * {
+    width: 800px;
+    margin: 16px auto;
+  }
+}
 header {
   position: relative;
 }
@@ -114,7 +155,7 @@ header h1 {
 }
 header .loader {
   height: 5px;
-  width: 80%;
+  width: 300px;
   margin: auto;
 }
 header.header-animation {
@@ -136,7 +177,6 @@ footer {
 }
 footer h2 {
   font-size: medium;
-  margin: 0;
 }
 footer p .fas {
   margin-right: 5px;
@@ -152,6 +192,7 @@ footer a:hover {
   align-self: center;
   justify-content: center;
   width: 60%;
+  max-width: 240px;
   margin: 40px auto 10px auto;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 20px;
@@ -238,6 +279,7 @@ footer a:hover {
   padding: 30px 15px;
   width: calc(100% - 30px);
   animation: display-delay 0.3s 2.5s both;
+  max-width: 800px;
 }
 .operation ol {
   padding: 0;
@@ -455,7 +497,7 @@ footer a:hover {
   transition: 0.3s;
 }
 .menu .menu-category .card .card-text {
-  flex: 1 0 90%;
+  flex: 1 0 calc(100% - 50px);
   transition: 0.5s;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -466,7 +508,7 @@ footer a:hover {
   text-overflow: ellipsis;
 }
 .menu .menu-category .card .price {
-  flex: 0 0 10%;
+  flex: 0 0 50px;
   align-self: flex-end;
   margin-bottom: 10px;
   transition: 0.3s;
@@ -488,7 +530,7 @@ footer a:hover {
   transform: translateX(250%) rotate(0);
 }
 .menu .menu-category .card:hover .card-text {
-  flex: 1 0 60%;
+  flex: 1 0 calc(90% - 120px);
 }
 .menu .menu-category .card:hover .icon-bg {
   background-color: #99E2D0;
