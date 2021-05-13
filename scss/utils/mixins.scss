@@ -33,16 +33,16 @@
     }
 }
 
-@mixin icon-before-title ($icon-content) {
-    font-family: "Font Awesome 5 Free";
-    content:$icon-content;
-    color: darken($color: $color-bg, $amount: 30%);
-    width: 20px;
-    margin: auto 20px;
-    &:hover{
-        color: $color-primary;
-    }
-}
+// @mixin icon-before-title ($icon-content) {
+//     font-family: "Font Awesome 5 Free";
+//     content:$icon-content;
+//     color: darken($color: $color-bg, $amount: 30%);
+//     width: 20px;
+//     margin: auto 20px;
+//     &:hover{
+//         color: $color-primary;
+//     }
+// }
 
 @mixin padding-section () {
     padding: 30px 15px;
@@ -57,6 +57,28 @@
     animation: display-delay 0.3s 2.5s both;    
 }
 
-@mixin shadow () {
-    box-shadow: 5px 5px 10px darken($color-bg,10);
+@mixin shadow ($dark-bg: false) {
+    @if $dark-bg {
+        box-shadow: 0 0 10px darken($color-bg,15);
+        @include transition();
+        &:hover{
+            box-shadow: 5px 5px 10px darken($color-bg,20);
+
+        }
+    } @else {
+        box-shadow: 0 0 10px darken($color-bg,5);
+        @include transition();
+        &:hover{
+            box-shadow: 5px 5px 10px darken($color-bg,10);
+
+        }
+    }
+}
+
+@mixin fadeInY(){
+    @for $n from 1 to 3 {
+        &:nth-child($n){
+            animation: fadeInY 0.5s ease-out calc($n / 10)s 1 both;
+        }
+    }
 }

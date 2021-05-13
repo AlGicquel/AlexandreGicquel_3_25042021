@@ -7,7 +7,7 @@
     border-radius: $border-radius;
     // animation: grow 0.5s 1.5s both ;
     @include transition();
-    @include shadow();
+    @include shadow($dark-bg:true);
     & a {
         display: block;
         height: 100%;

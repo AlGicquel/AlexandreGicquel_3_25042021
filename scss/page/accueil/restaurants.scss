@@ -10,16 +10,16 @@
     }
     & .restaurant{
         @include transition();
-        &:hover{
-            transform: scale(1.02);
-        }
+        // &:hover{
+        //     transform: scale(1.02);
+        // }
         & a {
         display: flex;
         flex-direction: column;
         position: relative;
         border-radius: $border-radius;
         margin: 20px 0;
-        @include shadow();
+        @include shadow($dark-bg:true);
         }
         & img {
             display: block;
