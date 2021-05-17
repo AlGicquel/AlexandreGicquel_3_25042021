@@ -33,16 +33,6 @@
     }
 }
 
-// @mixin icon-before-title ($icon-content) {
-//     font-family: "Font Awesome 5 Free";
-//     content:$icon-content;
-//     color: darken($color: $color-bg, $amount: 30%);
-//     width: 20px;
-//     margin: auto 20px;
-//     &:hover{
-//         color: $color-primary;
-//     }
-// }
 
 @mixin padding-section () {
     padding: 30px 15px;
